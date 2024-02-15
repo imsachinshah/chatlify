@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>RailsChatTutorial</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
+    <%# javascript_include_tag "jquery_init" %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "turbo", type: "module" %>
+    <%= javascript_include_tag "cable.js" %>
+    <%= javascript_include_tag "room.js" %>
+    <%= javascript_include_tag "channels/room_channel.js" %>
+  </head>
+
+  <body>
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-12">
+          <%= render partial: 'shared/nav_bar' %>
+          <div class="my-3">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</html>
